@@ -1,0 +1,32 @@
+﻿CREATE TABLE users(
+UserId INT NOT NULL IDENTITY(1,1),
+Username varchar(30) NOT NULL UNIQUE,
+Password varchar(255) NOT NULL,
+CONSTRAINT PK_Users PRIMARY KEY(UserId)
+);
+
+CREATE TABLE brand(
+BrandId INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+Brand VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE category(
+CatId INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+Category varchar(30) NOT NULL UNIQUE
+);
+
+CREATE TABLE product(
+ProId int NOT NULL PRIMARY KEY IDENTITY(1,1),
+Name varchar(60) NOT NULL,
+Quantity INT not null default 0,
+Price DECIMAL(8,2) NOT NULL DEFAULT 0.00,
+UserId int,
+BrandId int,
+CatId int,
+CONSTRAINT FK_UsersProduct FOREIGN KEY (UserId) 
+REFERENCES users(UserId) ON DELETE CASCADE,
+CONSTRAINT FK_BrandProduct FOREIGN KEY (BrandId)
+REFERENCES brand(BrandId) ON DELETE SET NULL,
+CONSTRAINT FK_CategoryProduct FOREIGN KEY(CatId)
+REFERENCES category(CatId) ON DELETE SET NULL
+);

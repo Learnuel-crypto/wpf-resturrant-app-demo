@@ -1,0 +1,47 @@
+﻿<Window x:Class="WpfHomeAppliance.FormUI.DashBoard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfHomeAppliance.FormUI"
+        mc:Ignorable="d"
+        Title="DashBoard" Height="500" Width="700" WindowStartupLocation="CenterScreen" Closed="Window_Closed" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="#05344E" >
+            <Image Source="/img/home.png" Width="80"></Image>
+            <Label Name="lblHead" Content="HOME APPLIANCE SHOP" FontSize="26" FontWeight="Bold" VerticalAlignment="Center" Foreground="#FBFBFB"></Label>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Name="menu" Orientation="Horizontal"  HorizontalAlignment="Right" Margin="10 8">
+            <Button Style="{DynamicResource LinkButtonStyle}" Name="btnProduct" Content="Products" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10 6" Margin="5 0" Background="Transparent"  BorderThickness="0" BorderBrush="Transparent" Foreground="#015FA7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Cursor="Hand" Click="btnProduct_Click">
+                
+            </Button>
+            <Button Style="{DynamicResource LinkButtonStyle}" Name="btnViewStock" Content="View Stock" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10 6" Margin="5 0" Background="Transparent"  BorderThickness="0" BorderBrush="Transparent" Foreground="#015FA7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Cursor="Hand" Click="btnViewStock_Click">
+                
+            </Button>
+            <Button Style="{DynamicResource LinkButtonStyle}" Name="btnCategory" Content="Category" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10 6" Margin="5 0" Background="Transparent"  BorderThickness="0" BorderBrush="Transparent" Foreground="#015FA7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Cursor="Hand" Click="btnCategory_Click">
+
+            </Button>
+            <Button Style="{DynamicResource LinkButtonStyle}" Name="btnBrand" Content="Brand" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10 6" Margin="5 0" Background="Transparent"  BorderThickness="0" BorderBrush="Transparent" Foreground="#015FA7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Cursor="Hand" Click="btnBrand_Click">
+
+            </Button>
+            <Button Style="{DynamicResource LinkButtonStyle}" Name="btnLogout" Content="Sign out" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Top" HorizontalAlignment="Right" Padding="10 6" Margin="5 0" Background="Transparent"  BorderThickness="0" BorderBrush="Transparent" Foreground="#015FA7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Cursor="Hand" Click="btnLogout_Click"> 
+            </Button> 
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" >
+            <Image Source="/img/shopping.png"  Stretch="Uniform"  Opacity="0.5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="3"  Background="#00406C" VerticalAlignment="Center">
+            <Label Name="lblfooter" Content="Meeting all your shopping needs..." Foreground="#FF931E" FontFamily="segoui" FontSize="11" FontWeight="DemiBold" Margin="5 3" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontStyle="Italic"/>
+        </StackPanel> 
+    </Grid>
+</Window>
